@@ -1,0 +1,8 @@
+#!/bin/bash
+for i in *.m4a
+do
+name=$(echo $i|sed 's/\.m4a$//')
+faad "$i"
+oggenc "$name.wav"
+rm "$name.wav"
+done
